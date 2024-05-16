@@ -18,11 +18,12 @@
             <h1>{{title}}</h1>
         </header>
 
-        <main>
+        <main class="text-center">
+            <input v-model="numberEmail" type="number" placeholder="inserisci il numero email da generare">
+            <button @click="waitAllEmail(this.numberEmail)">Email in console</button>
             <ul id="idUl">
                 <li v-for="email, i in listaIndirizzi">{{listaIndirizzi[i]}}</li>
             </ul>
-            <button @click="waitAllEmail">Email in console</button>
         </main>
     </div>
 

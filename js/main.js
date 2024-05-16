@@ -6,6 +6,7 @@ createApp({
             title: '10 email casuali pronte per te!',
             indirizzoEmail: 'https://flynn.boolean.careers/exercises/api/random/mail',
             listaIndirizzi: [],
+            numberEmail: ''
         }
     },
     methods: {
@@ -14,9 +15,9 @@ createApp({
                 return result.data.response
             })
         },
-        waitAllEmail() {
+        waitAllEmail(numeberEmail) {
             const emailPromises = []
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < numeberEmail; i++) {
                 emailPromises.push(this.getEmail())
             }
             Promise.all(emailPromises).then((emails) => {
